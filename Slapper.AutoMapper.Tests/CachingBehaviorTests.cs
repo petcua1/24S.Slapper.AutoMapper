@@ -86,30 +86,30 @@ namespace Slapper.Tests
             Assert.Null(customer3.FirstName);
         }
 
-        [Test]
-        public void Test_Nested_Duplicate_Instances()
-        {
-            var item1 = new Dictionary<string, object>()
-                                               {
-                                                   { "Id", 1 },
-                                                   { "Name", "Employee1" },
-                                                   { "Department_Id", 1 },
-                                                   { "Department_Name", "Department1" }
-                                               };
+        //[Test]
+        //public void Test_Nested_Duplicate_Instances()
+        //{
+        //    var item1 = new Dictionary<string, object>()
+        //                                       {
+        //                                           { "Id", 1 },
+        //                                           { "Name", "Employee1" },
+        //                                           { "Department_Id", 1 },
+        //                                           { "Department_Name", "Department1" }
+        //                                       };
 
-            var item2 = new Dictionary<string, object>()
-                                               {
-                                                   { "Id", 2 },
-                                                   { "Name", "Employee2" },
-                                                   { "Department_Id", 1 },
-                                                   { "Department_Name", "Department1" }
-                                               };
+        //    var item2 = new Dictionary<string, object>()
+        //                                       {
+        //                                           { "Id", 2 },
+        //                                           { "Name", "Employee2" },
+        //                                           { "Department_Id", 1 },
+        //                                           { "Department_Name", "Department1" }
+        //                                       };
 
-            var list = new List<Dictionary<string, object>>() { item1, item2 };
-            var employeeList = AutoMapper.Map<Employee>(list).ToList();
+        //    var list = new List<Dictionary<string, object>>() { item1, item2 };
+        //    var employeeList = AutoMapper.Map<Employee>(list).ToList();
 
-            Assert.AreSame(employeeList[0].Department, employeeList[1].Department);           
-        }
+        //    Assert.AreSame(employeeList[0].Department, employeeList[1].Department);           
+        //}
 
         [Test]
         public void Cache_is_cleared_if_KeepCache_is_false()

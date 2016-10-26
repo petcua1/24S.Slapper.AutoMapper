@@ -496,9 +496,10 @@ namespace Slapper
                                 }
                                 else
                                 {
-                                    nestedInstance = typeof(IEnumerable).IsAssignableFrom(memberType)
-                                                         ? CreateInstance(memberType)
-                                                         : GetInstance(memberType, newDictionary, parentInstance == null ? 0 : parentInstance.GetHashCode()).Item2;
+                                    nestedInstance = CreateInstance(memberType);
+                                        //typeof(IEnumerable).IsAssignableFrom(memberType)
+                                        //                 ? CreateInstance(memberType)
+                                        //                 : GetInstance(memberType, newDictionary, parentInstance == null ? 0 : parentInstance.GetHashCode()).Item2;
                                 }
                             }
 
